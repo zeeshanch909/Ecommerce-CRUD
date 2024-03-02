@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: rgba(0, 0, 0, 0.89);
+}
+
+.container {
+    display: block;
+    /* background-color: rgba(129, 92, 172, 0.534); */
+    /* background-image: conic-gradient(red, yellow, green, blue, black); */
+    /* background-image: radial-gradient(closest-side at 60% 55%, red, yellow); */
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 255, 0.452), rgba(128, 0, 128, 0.644));
+}
+
+.navbar {
+    background-image: linear-gradient(to right, rgba(128, 0, 128, 0.644), rgba(0, 0, 255, 0.452));
+
+}
+
+.nav-items {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+}
+
+li {
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#itemContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    width: 280px;
+    text-align: center;
+
+}
+
+.card:hover {
+    background-color: #cff17071;
+}
+
+#img-cart {
+    width: 200px;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(250, 115, 5);
+    font-size: 2rem;
+
+}
+
+a:hover {
+    background-color: black;
+    color: rgb(229, 222, 236);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#deleteProduct {
+    display: none;
+}
+
+.openEditForm {
+    background-color: rgba(7, 80, 80, 0.945);
+}
+
+
+
+#dltbtn {
+    background-color: rgba(185, 28, 28, 0.74);
+}
+
+.openEditForm,
+#dltbtn {
+    color: white;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+#deleteProduct {
+    margin: 10px 80px;
+    padding: 40px;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    background-color: burlywood;
+    transition: .3s all ease-in-out;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    border: 2px solid black;
+    border-radius: 20px;
+
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+#confirmDeleteBtn {
+    background-color: rgba(117, 9, 189, 0.822);
+    color: white;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+#cancelDeleteBtn {
+    background-color: rgba(231, 29, 29, 0.87);
+    color: white;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+#productName {
+    color: rgb(6, 35, 114);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ----------------------------------------------- edit   Container */
+.editContainer {
+    display: none;
+    height: 600px;
+    width: 700px;
+    /* margin: 10px 80px; */
+    /* padding: 40px; */
+    position: fixed;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgb(195, 34, 216);
+    border: 1px solid black;
+    border-radius: 20px;
+    transition: .3s all ease-in-out;
+    color: white;
+    text-align: center;
+
+}
+
+.editProduct {
+    background-color: rgba(57, 91, 107, 0.295);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 40px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    border-radius: 35px;
+}
+
+.form_item {
+    position: relative;
+    left: 50%;
+
+    /* display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; */
+}
+
+/* label {
+    display: block;
+}
+
+*/
+#editForm {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.form_item {
+    font-size: 20px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    border: 2px solid grey;
+    border-radius: 20px;
+    /* margin: 5px;
+        padding: 8px; */
+}
+
+.save_btn {
+    background-color: rgba(13, 240, 43, 0.89);
+    border-radius: 25px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.cancel_btn {
+    background-color: rgba(255, 0, 0, 0.733);
+    border-radius: 25px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+    #itemContainer {
+        grid-template-columns: auto auto auto;
+    }
+
+    .card {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #itemContainer {
+        grid-template-columns: auto auto;
+    }
+
+    .card {
+        width: 340px;
+    }
+}
+
+@media screen and (max-width: 774px) {
+    #itemContainer {
+        grid-template-columns: auto;
+
+    }
+
+    .card {
+        width: 95%;
+    }
+}

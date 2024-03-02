@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>add Product</title>
+  <link rel="stylesheet" href="addProduct.css" />
+</head>
+
+<body>
+  <div class="addProduct">
+    <h2>Add Product</h2>
+    <form id="addForm">
+      <div class="form_item">
+        <label for="title">Product Name:</label>
+        <input type="text" id="title" name="productName" required />
+      </div>
+      <div class="form_item">
+        <label for="price">Product Price:</label>
+        <input type="text" id="price" name="productPrice" required />
+      </div>
+      <div class="form_item">
+        <label for="description">Details</label>
+        <textarea name="detail" id="description" cols="30" rows="10"></textarea>
+      </div>
+
+      <div class="form_item">
+        <label for="category">Category</label>
+        <select name="category" id="category">
+          <option value="Men">Men's Category</option>
+          <option value="Women">Women's Category</option>
+          <option value="Child">Children's Category</option>
+        </select>
+      </div>
+
+      <div class="form_item">
+        <label for="image">Image URL</label>
+        <input type="text" name="image" id="image" value="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" />
+      </div>
+
+      <div class="form_item">
+        <label for="rate">Rating</label>
+        <input type="number" id="rate" />
+      </div>
+      <div class="form_item">
+        <label for="count">Product Sold</label>
+        <input type="number" id="count" />
+      </div>
+      <!-- Add more fields as needed -->
+      <div class="form_item">
+        <button class="add_btn" type="submit">Add Product</button>
+        <button class="cancel_btn" type="reset">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="addProduct.js"></script>
+</body>
+
+</html>
