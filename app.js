@@ -193,25 +193,17 @@ const updateProduct = async (event) => {
 
       console.log("Local data", localBody);
 
-      const updatedProducts =
-        JSON.parse(localStorage.getItem("Products")) || [];
+      // Replace the existing local product with the updated one in addProducts array
+      editLocalProducts[targetProductIndex] = localBody;
+      localStorage.setItem("addProducts", JSON.stringify(editLocalProducts)); // Update addProducts array in local storage
 
-      const existingIndex = updatedProducts.findIndex(
-        (product) => product.id === editProductId
-      );
-
-      if (existingIndex !== -1) {
-        updatedProducts[existingIndex] = localBody;
-      } else {
-        updatedProducts.push(localBody);
-      }
-
-      localStorage.setItem("Products", JSON.stringify(updatedProducts));
       // Fetch all products including updated ones and display them
-      const allProducts = updatedProducts.concat(editLocalProducts);
+      const apiProducts = JSON.parse(localStorage.getItem("Products")) || [];
+      const allProducts = [...apiProducts, ...editLocalProducts];
       displayCards(allProducts);
     }
   }
+
 };
 
 document.addEventListener("DOMContentLoaded", () => {
